@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+Made by RF-Fox<head>
+  <title>BTC Profit Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="stock-profit-container">
+    <h1>This is why you HODL...</h1>
+    <p>Select a year and enter a USD amount to see how much money you would have if you had invested. Last updated Price, 9/07/2018 1BTC = 6419 USD. Updates daily at 12 CST.</p>
+    <br />
+    <h1 id="stock-profit-price">$0</h1>
+    <select id="buy-stock-price">
+        <option value="1">$1</option>
+        <option value="10">$10</option>
+        <option value="100">$100</option>
+        <option value="1000">$1,000</option>
+      </select> 
+    <select id="stock-year-select">
+      <option value="2009">2009</option>
+      <option value="2010">2010</option>
+      <option value="2011">2011</option>
+      <option value="2012">2012</option>
+      <option value="2013">2013</option>
+      <option value="2014">2014</option>
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+      <option value="2017">2017</option>
+    </select> 
+    <br /><br />
+    <p id="stock-profit-desc">loading...</p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

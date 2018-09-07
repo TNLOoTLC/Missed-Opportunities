@@ -1,0 +1,101 @@
+<style>
+  div#stock-profit-container {
+    text-align: center;
+    width: 100%;
+    max-width: 750px;
+    margin: 0px auto;
+  }
+
+  div#stock-profit-container select#buy-stock-price,
+  div#stock-profit-container select#stock-year-select {
+    width: 15%;
+    min-width: 100px;
+    font-size: .75em;
+    margin: 0px 5px;
+  }
+
+  div#stock-profit-container select#buy-stock-price,
+  div#stock-profit-container select#stock-year-select {
+    border-radius: 0px;
+    padding: 15px 15px;
+    background-color: white;
+  }
+</style>
+
+<div id="stock-profit-container">
+  <h1>What's It Worth Today?</h1>
+  <p>Select a year and enter a dollar amount to see how much you would have made if you invested in BitCoin at that time!</p>
+  <br />
+  <h1 id="stock-profit-price">$0</h1>
+  <select id="buy-stock-price">
+    <option value="1">$1</option>
+    <option value="10">$10</option>
+    <option value="100">$100</option>
+    <option value="1000">$1,000</option>
+  </select>
+  <select id="stock-year-select">
+    <option value="2009">2009</option>
+    <option value="2010">2010</option>
+    <option value="2011">2011</option>
+    <option value="2012">2012</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+  </select>
+  <br />
+  <br />
+  <p id="stock-profit-desc">loading...</p>
+</div>
+
+<script>
+  (function () {
+    // cache bitcoin prices
+    var prices = {
+      2009: 0.005,
+      2010: 0.08,
+      2011: 0.30,
+      2012: 5.27,
+      2013: 13.30,
+      2014: 309.87,
+      2015: 333.75,
+      2016: 434.46,
+      2017: 1169.04
+    }
+    // cache all need elems
+    var elems = {
+      year: document.getElementById('stock-year-select'),
+      price: document.getElementById('buy-stock-price'),
+      profit: document.getElementById('stock-profit-price'),
+      sentence: document.getElementById('stock-profit-desc')
+    }
+    // format money 
+    function format(price) {
+      price = parseInt(price);
+      price = '$' + price.toLocaleString();
+      return price;
+    }
+    // update price and display 
+    function update() {
+      var profit = parseInt(elems.price.value);
+      var price = profit;
+      var year = parseInt(elems.year.value);
+      profit = Math.floor((profit / prices[year]) * 15000);
+      if (profit && year) {
+        elems.profit.innerText = format(profit);
+        elems.sentence.innerText = 'If you bought ' + format(price) + ' worth of BitCoin in ' + year +
+          ' it would be worth ' + format(profit) +
+          ' today, minus your initial investment you would have a profit of ' + format(profit - price) + '!';
+      } else {
+        elems.profit.innerText = format(0);
+        elems.sentence.innerText = 'You done messed up now...';
+      }
+    }
+    // listen to event changes
+    elems.price.onchange = update;
+    elems.year.onchange = update;
+    // init 
+    update();
+  })();
+</script>
