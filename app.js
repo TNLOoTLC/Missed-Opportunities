@@ -32,7 +32,7 @@
     profit = Math.floor((profit / prices[year]) * 15000);
     if (profit && year) {
       elems.profit.innerText = format(profit);
-      elems.sentence.innerText = 'If you bought ' + format(price) + ' worth of BitCoin in ' + year + ' it would be worth ' + format(profit) + ' today, minus your initial investment you would have a profit of ' + format(profit - price) + '!';
+      elems.sentence.innerText = 'If you bought ' + format(price) + ' worth of BitCoin in ' + year + ' it would be worth ' + format(profit) + ' today. Minus your initial investment, you would have a profit of ' + format(profit - price) + '!';
     } else {
       elems.profit.innerText = format(0);
       elems.sentence.innerText = 'You done messed up now...';

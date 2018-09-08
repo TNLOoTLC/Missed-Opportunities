@@ -1,11 +1,13 @@
 body {
   color: steelblue;
   background-color: rgb(3, 29, 71);
-  font-family: "Lucida Console", Monaco, monospace;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 400;
 }
 
 h1 {
   color: rgb(75, 143, 48);
+  font-weight: 600;
 }
 
 div#stock-profit-container {
