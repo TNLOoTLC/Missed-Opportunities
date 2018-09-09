@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-Made by RF-Fox
 
 <head>
   <title>Missed Opportunities</title>
@@ -11,10 +10,9 @@ Made by RF-Fox
 <body>
   <div id="stock-profit-container">
     <h1>Missed Opportunities</h1>
-    <p>Select a year and enter a USD amount to see how much money you would have if you had invested. Last updated
+    <p class="instructions">Select a year and enter a USD amount to see how much money you would have if you had invested. Last updated
       Price, 9/07/2018 1BTC = 6419 USD. Updates daily at 12 CST.</p>
-    <br />
-    <h1 id="stock-profit-price">$0</h1>
+    <br>
     <select id="buy-stock-price">
       <option value="1">$1</option>
       <option value="10">$10</option>
@@ -32,7 +30,10 @@ Made by RF-Fox
       <option value="2016">2016</option>
       <option value="2017">2017</option>
     </select>
-    <br /><br />
+    <br><br>
+    <div class="profits-amount" id="stock-profit-price">$0</div>
+    <div>worth of missed opportunities</div>
+    <br>
     <p id="stock-profit-desc">loading...</p>
   </div>
   <script src="app.js"></script>
