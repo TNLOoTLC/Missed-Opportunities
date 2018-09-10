@@ -1,3 +1,9 @@
+html,body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
   color: steelblue;
   background-color: rgb(3, 29, 71);
@@ -6,9 +12,17 @@ body {
   font-size: 1.5rem;
 }
 
+.page-content {
+  height: -webkit-fill-available;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
 h1 {
   color: rgb(75, 143, 48);
   font-weight: 600;
+  margin-top: 0;
 }
 
 .profits-amount {
@@ -24,12 +38,6 @@ div#stock-profit-container {
   text-align: center;
   width: 100%;
   max-width: 750px;
-  position: absolute;
-  margin: 0 auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 
 div#stock-profit-container select#buy-stock-price,
@@ -41,4 +49,13 @@ div#stock-profit-container select#stock-year-select {
   border-radius: 0px;
   padding: 15px 15px;
   background-color: white;
+}
+
+#stock-profit-desc {
+  margin-bottom: 5px;
+}
+
+.footer {
+  font-size: 1rem;
+  display: flex
 }
