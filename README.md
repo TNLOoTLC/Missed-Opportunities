@@ -1,4 +1,4 @@
-# TestBTCcalc
+# Missed Opportunities
 
 A simple calculator for your theoretical profits if you had bought bitcoin a while ago
 
